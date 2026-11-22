@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#5b2c8a" />
+    <meta name="description" content="CVC Portal — Crestview College access for students, teachers, and administrators." />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="Mbfe9SGVhaJV60Vg6KU5KufxF9ok7JQcrj0tPjZVKGA" />
+    <meta property="og:title" content="CVC Portal" />
+    <meta property="og:site_name" content="CVC Portal" />
+    <meta property="og:description" content="A connected portal for Crestview College students, teachers, and administrators." />
+    <meta property="og:type" content="website" />
+    <title>CVC Portal | Crestview College</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main id="auth-screen" class="auth-screen">
+      <header class="landing-nav">
+        <a class="brand" href="#" aria-label="CVC Portal home"><span class="brand-icon" aria-hidden="true">🎓</span><span>CVC <small>PORTAL</small></span></a>
+        <div class="nav-actions">
+          <button class="button button-quiet" type="button" data-auth-view="login">Log in</button>
+          <button class="button button-primary" type="button" data-auth-view="signup">Create account</button>
+        </div>
+      </header>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">WELCOME TO CRESTVIEW</p>
+          <h1>Believe.<br />Inspire.<br /><span>Excel.</span></h1>
+          <p class="hero-description">A connected campus for every learner, educator, and school leader. Your Crestview journey starts here.</p>
+          <div class="hero-actions">
+            <button class="button button-primary button-large" type="button" data-auth-view="login">Enter the portal <span aria-hidden="true">→</span></button>
+            <button class="button button-outline button-large" type="button" data-auth-view="signup">Join the community</button>
+          </div>
+          <div class="hero-points"><span>✦ Student-centred learning</span><span>✦ One connected community</span></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of books and a graduation cap">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-cap" aria-hidden="true">🎓</div>
+          <div class="art-book book-back"></div><div class="art-book book-front"></div>
+          <div class="art-seal">C</div><p>LEARN WITH PURPOSE</p>
+        </div>
+      </section>
+      <section class="welcome-strip">
+        <div><span class="strip-icon">◎</span><strong>One portal</strong><small>Everything you need for school</small></div>
+        <div><span class="strip-icon">✦</span><strong>Every role</strong><small>Students, teachers and admins</small></div>
+        <div><span class="strip-icon">↗</span><strong>Always moving forward</strong><small>Resources, results and updates</small></div>
+      </section>
+      <section id="auth-panel" class="auth-panel" aria-labelledby="auth-title" hidden>
+        <button class="back-link" type="button" data-auth-view="home">← Back to home</button>
+        <div class="auth-heading">
+          <span class="brand-icon" aria-hidden="true">🎓</span>
+          <p class="eyebrow" id="auth-eyebrow">YOUR CRESTVIEW ACCOUNT</p>
+          <h2 id="auth-title">Welcome back</h2>
+          <p id="auth-subtitle">Log in to continue to your portal.</p>
+        </div>
+        <div class="auth-mode" role="tablist" aria-label="Authentication">
+          <button type="button" class="mode-tab active" role="tab" aria-selected="true" data-mode="login">Log in</button>
+          <button type="button" class="mode-tab" role="tab" aria-selected="false" data-mode="signup">Sign up</button>
+        </div>
+        <div class="role-tabs" role="tablist" aria-label="Choose account role">
+          <button type="button" class="role-tab active" role="tab" aria-selected="true" data-role="student">Student</button>
+          <button type="button" class="role-tab" role="tab" aria-selected="false" data-role="teacher">Teacher</button>
+          <button type="button" class="role-tab" role="tab" aria-selected="false" data-role="admin">Admin</button>
+        </div>
+        <form id="login-form" class="stack-form">
+          <label for="login-identity" id="identity-label">Email address</label>
+          <input id="login-identity" name="identity" type="email" autocomplete="username" required />
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+          <button class="button button-primary button-large" type="submit">Log in <span aria-hidden="true">→</span></button>
+          <p class="form-message" id="login-message" role="status" aria-live="polite"></p>
+        </form>
+        <form id="signup-form" class="stack-form" hidden>
+          <label for="signup-name">Full name</label><input id="signup-name" name="name" autocomplete="name" maxlength="100" required />
+          <label for="signup-email">Email address</label><input id="signup-email" name="email" type="email" autocomplete="email" required maxlength="160" />
+          <div id="signup-password-field"><label for="signup-password">Create password</label><input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="8" required /></div>
+          <div id="signup-class-field"><label for="signup-class">Class</label><select id="signup-class" name="className" required><option value="">Choose your class</option><option>Year 7</option><option>Year 8</option><option>Year 9</option><option>Year 10</option><option>Year 11</option><option>Year 12</option></select></div>
+          <div id="signup-subject-field" hidden><label for="signup-subject">Subject</label><input id="signup-subject" name="subject" maxlength="80" placeholder="e.g. Mathematics" /></div>
+          <button class="button button-primary button-large" type="submit">Create account <span aria-hidden="true">→</span></button>
+          <p class="form-message" id="signup-message" role="status" aria-live="polite"></p>
+        </form>
+        <aside class="demo-hint">
+          <strong>Demo sign-in</strong>
+          <p>Student: <code>amara.okafor@crestview.edu</code> · <code>Student123!</code></p>
+          <p>Teacher: <code>james.cole@crestview.edu</code> · <code>Teacher123!</code></p>
+          <p>Admin email: <code>admin@crestview.edu</code> · <code>Admin123!</code></p>
+          <small>Or create a new account for any role using your own email and password.</small>
+        </aside>
+      </section>
+    </main>
+    <section id="portal-screen" class="portal-layout" hidden>
+      <aside class="sidebar">
+        <a class="sidebar-brand brand" href="#overview"><span class="brand-icon" aria-hidden="true">🎓</span><span>CVC <small>PORTAL</small></span></a>
+        <div class="sidebar-user"><span class="avatar" id="user-avatar">C</span><div><strong id="user-name"></strong><small id="user-role"></small></div></div>
+        <nav class="side-nav" aria-label="Portal sections">
+          <a href="#overview" class="active" data-page="overview"><span>⌂</span> Overview</a>
+          <a href="#results" data-page="results"><span>▤</span> Results</a>
+          <a href="#resources" data-page="resources"><span>⇩</span> Notes & resources</a>
+          <a href="#announcements" data-page="announcements"><span>◉</span> Notice board</a>
+          <a href="#campus" data-page="campus"><span>✦</span> CVC Hub</a>
+          <a href="#students" data-page="students" data-staff-only><span>♙</span> Students</a>
+          <a href="#management" data-page="management" data-admin-only><span>⚙</span> Administration</a>
+          <a href="#profile" data-page="profile"><span>◌</span> My profile</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <span class="demo-label"><i></i> SCHOOL PORTAL</span>
+          <button id="logout-button" class="button button-quiet logout-button" type="button"><span>↪</span> Sign out</button>
+        </div>
+      </aside>
+      <div class="portal-main">
+        <header class="topbar">
+          <div><p class="eyebrow" id="today-label"></p><h1 id="greeting">Welcome</h1><p class="term-label">Believe, Inspire, Excel</p></div>
+          <div class="topbar-actions"><button id="theme-toggle" class="button button-outline theme-toggle" type="button" aria-label="Switch colour theme">☀ Light mode</button><button class="topbar-user" type="button" data-page-link="profile"><span class="avatar avatar-small" id="top-avatar">C</span><span><strong id="top-name"></strong><small id="top-role"></small></span><b aria-hidden="true">⌄</b></button></div>
+        </header>
+        <div id="portal-message" class="notice" role="status" aria-live="polite" hidden></div>
+        <section id="page-overview" class="content-section page-content">
+          <div class="section-title"><div><p class="eyebrow">YOUR SCHOOL AT A GLANCE</p><h2>Overview</h2></div><span class="pill" id="term-pill">2026 · Term 1</span></div>
+          <div id="summary-cards" class="summary-grid"></div>
+          <div class="overview-grid">
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">KEEP IN THE LOOP</p><h3>Latest notices</h3></div><a href="#announcements" data-page-link="announcements">View all →</a></div><div id="recent-announcements" class="announcement-list"></div></article>
+            <article class="panel"><div class="panel-heading"><div><p class="eyebrow">JUMP RIGHT IN</p><h3>Quick links</h3></div></div><div class="quick-links"><a href="#results" data-page-link="results"><span class="quick-icon">▤</span><span><strong>Academic results</strong><small>Track your progress by term</small></span><b>→</b></a><a href="#resources" data-page-link="resources"><span class="quick-icon">⇩</span><span><strong>Learning resources</strong><small>Notes and study materials</small></span><b>→</b></a></div></article>
+          </div>
+          <div id="admin-overview" class="admin-overview" hidden></div>
+        </section>
+        <section id="page-results" class="content-section page-content" hidden>
+          <div class="section-title"><div><p class="eyebrow">ACADEMIC PROGRESS</p><h2>Results</h2><p class="section-subtitle">Browse results and celebrate your progress.</p></div><button id="download-results" class="button button-outline" type="button">↓ Download results</button></div>
+          <div class="filter-row"><label for="term-filter">Academic term</label><select id="term-filter"></select></div>
+          <div id="result-content"></div><div id="teacher-result-tools" class="management-lists" hidden></div>
+        </section>
+        <section id="page-resources" class="content-section page-content" hidden>
+          <div class="section-title"><div><p class="eyebrow">CLASSROOM MATERIALS</p><h2>Notes & resources</h2><p class="section-subtitle">Download the latest class notes and study materials.</p></div></div>
+          <div id="note-content" class="resource-grid"></div><div id="teacher-upload-tools" class="management-lists" hidden></div>
+        </section>
+        <section id="page-announcements" class="content-section page-content" hidden>
+          <div class="section-title"><div><p class="eyebrow">NEWS & UPDATES</p><h2>Notice board</h2><p class="section-subtitle">Important updates from across Crestview College.</p></div></div>
+          <div id="announcement-content" class="announcement-list"></div><div id="notice-tools" class="management-lists" hidden></div>
+        </section>
+        <section id="page-campus" class="content-section page-content" hidden>
+          <div class="section-title"><div><p class="eyebrow">CONNECTED SCHOOL SERVICES</p><h2>CVC Hub</h2><p class="section-subtitle">Learning, wellbeing, communication and campus operations in one place.</p></div><label class="school-switch-label" for="school-switch">School <select id="school-switch" aria-label="Select school"></select></label></div>
+          <p class="demo-integration-note">Portal records are saved in this browser. SMS, email, GPS, biometric hardware and external AI services require school-hosted integrations.</p>
+          <div id="campus-identity" class="campus-identity"></div><div id="campus-analytics" class="campus-analytics"></div>
+          <div class="campus-grid">
+            <section class="CVC-panel"><h3>Digital library</h3><div id="CVC-library"></div><form class="data-form" data-action="add-book"><label for="book-title">Add a library item</label><input id="book-title" name="title" maxlength="120" placeholder="Book or resource title" required><input name="author" maxlength="100" placeholder="Author" aria-label="Author"><button class="button button-primary" type="submit">Add to library</button></form></section>
+            <section class="CVC-panel"><h3>Assignments</h3><div id="CVC-assignments"></div><form class="data-form" data-action="submit-assignment"><label for="assignment-select">Submit work</label><select id="assignment-select" name="assignmentId" required></select><textarea name="submission" rows="3" maxlength="2000" placeholder="Paste your response" required></textarea><button class="button button-primary" type="submit">Submit assignment</button></form><form class="data-form" data-action="create-assignment"><label for="assignment-title">Publish assignment (staff)</label><input id="assignment-title" name="title" maxlength="120" placeholder="Assignment title" required><input name="due" type="date" required aria-label="Assignment due date"><button class="button button-primary" type="submit">Publish assignment</button></form></section>
+            <section class="CVC-panel"><h3>Discussion forum</h3><div id="CVC-forum"></div><form class="data-form" data-action="create-discussion"><label for="forum-message">Join the conversation</label><textarea id="forum-message" name="message" rows="2" maxlength="500" required></textarea><button class="button button-primary" type="submit">Post message</button></form></section>
+            <section class="CVC-panel"><h3>Events calendar</h3><div id="CVC-events"></div><form class="data-form" data-action="create-event"><label for="event-title">Add an event (staff)</label><input id="event-title" name="title" maxlength="100" required><input name="date" type="date" required aria-label="Event date"><button class="button button-primary" type="submit">Add event</button></form></section>
+            <section class="CVC-panel"><h3>Messages & notifications</h3><div id="CVC-chat"></div><form class="data-form" data-action="send-message"><label for="chat-message">Send a portal message</label><textarea id="chat-message" name="message" rows="2" maxlength="500" required></textarea><button class="button button-primary" type="submit">Send message</button></form><p class="campus-footnote">In-app only; no SMS or email is sent.</p></section>
+            <section class="CVC-panel"><h3>Student wellbeing & attendance</h3><div id="CVC-wellbeing"></div><form class="data-form" data-action="record-wellbeing"><label for="wellbeing-student">Record behavior / attendance</label><select id="wellbeing-student" name="studentId"></select><select name="kind" aria-label="Record type"><option>Positive behavior</option><option>Support note</option><option>Attendance check-in</option></select><input name="note" maxlength="160" placeholder="Brief note" required><button class="button button-primary" type="submit">Save record</button></form><p class="campus-footnote">Attendance is manually recorded.</p></section>
+            <section class="CVC-panel"><h3>Visitor management</h3><div id="CVC-visitors"></div><form class="data-form" data-action="register-visitor"><label for="visitor-name">Register a visitor</label><input id="visitor-name" name="name" maxlength="100" placeholder="Visitor name" required><input name="purpose" maxlength="120" placeholder="Visit purpose" required><button class="button button-primary" type="submit">Register visitor</button></form></section>
+            <section class="CVC-panel"><h3>Transport & hostel</h3><div id="CVC-operations"></div><form class="data-form" data-action="save-campus-operation"><label for="transport-route">Transport / hostel request</label><select id="transport-route" name="kind"><option>Bus route</option><option>Hostel request</option></select><input name="details" maxlength="160" placeholder="Route or accommodation details" required><button class="button button-primary" type="submit">Save request</button></form><p class="campus-footnote">Live bus location and room allocation are not connected.</p></section>
+            <section class="CVC-panel"><h3>Student services</h3><div class="CVC-service-actions"><button class="button button-outline" type="button" data-action="download-report">Download report card</button><button class="button button-outline" type="button" data-action="download-certificate">Generate certificate</button><button class="button button-outline" type="button" data-action="download-id">Download student ID</button></div><div id="campus-notifications"></div><form class="data-form" data-action="save-notifications"><label for="notification-choice">Notification preference</label><select id="notification-choice" name="preference"><option>In-app only</option><option>Email (not connected)</option><option>SMS (not connected)</option></select><button class="button button-primary" type="submit">Save preference</button></form></section>
+          </div>
+          <section class="CVC-panel CVC-audit"><h3>Audit log & activity history</h3><div id="CVC-audit"></div></section>
+        </section>
+        <section id="page-students" class="content-section page-content" hidden>
+          <div class="section-title"><div><p class="eyebrow">CVC COMMUNITY</p><h2>Students</h2><p class="section-subtitle">Browse student accounts and their class information.</p></div></div>
+          <div id="students-content"></div>
+        </section>
+        <section id="page-management" class="content-section page-content" hidden>
+          <div class="section-title"><div><p class="eyebrow">PORTAL CONTROL CENTRE</p><h2>Administration</h2><p class="section-subtitle">Manage accounts, approvals, school data, and portal activity.</p></div></div>
+          <div id="management-content" class="management-lists"></div>
+        </section>
+        <section id="page-profile" class="content-section page-content" hidden>
+          <div class="section-title"><div><p class="eyebrow">YOUR ACCOUNT</p><h2>My profile</h2><p class="section-subtitle">Your personal details and account information.</p></div></div>
+          <div id="profile-content"></div>
+        </section>
+        <footer class="footer"><strong>CVC Portal</strong><span>Crestview College</span><span>Believe, Inspire, Excel</span></footer>
+      </div>
+    </section>
+    <aside id="cookie-notice" class="cookie-notice" role="dialog" aria-label="Cookie and storage preferences" hidden>
+      <div class="cookie-copy"><strong>Privacy & storage control</strong><p>This portal uses browser storage to remember accounts and settings. It does not use analytics or advertising cookies.</p></div>
+      <div class="cookie-actions">
+        <button class="button button-outline" type="button" data-cookie-choice="rejected">Reject optional</button>
+        <button class="button button-primary" type="button" data-cookie-choice="accepted">Accept optional</button>
+      </div>
+    </aside>
+    <noscript>This portal requires JavaScript to display your school information.</noscript>
+  </body>
+</html>

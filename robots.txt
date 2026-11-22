@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://opposed-evaluations-pos-accessed.trycloudflare.com/sitemap.xml
